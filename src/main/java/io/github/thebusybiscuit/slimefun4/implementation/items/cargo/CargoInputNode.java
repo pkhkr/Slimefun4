@@ -47,14 +47,14 @@ public class CargoInputNode extends AbstractFilterNode {
 
         String roundRobinMode = BlockStorage.getLocationInfo(b.getLocation(), ROUND_ROBIN_MODE);
         if (!BlockStorage.hasBlockInfo(b) || roundRobinMode == null || roundRobinMode.equals(String.valueOf(false))) {
-            menu.replaceExistingItem(24, new CustomItemStack(HeadTexture.ENERGY_REGULATOR.getAsItemStack(), "&7Round-Robin Mode: &4\u2718", "", "&e> Click to enable Round Robin Mode", "&e(Items will be equally distributed on the Channel)"));
+            menu.replaceExistingItem(24, new CustomItemStack(HeadTexture.ENERGY_REGULATOR.getAsItemStack(), "&7라운드 로빈 모드: &4\u2718", "", "&e> 클릭하여 라운드 로빈 모드 활성화", "&e(아이템이 채널에 균등하게 분배됩니다)"));
             menu.addMenuClickHandler(24, (p, slot, item, action) -> {
                 BlockStorage.addBlockInfo(b, ROUND_ROBIN_MODE, String.valueOf(true));
                 updateBlockMenu(menu, b);
                 return false;
             });
         } else {
-            menu.replaceExistingItem(24, new CustomItemStack(HeadTexture.ENERGY_REGULATOR.getAsItemStack(), "&7Round-Robin Mode: &2\u2714", "", "&e> Click to disable Round Robin Mode", "&e(Items will be equally distributed on the Channel)"));
+            menu.replaceExistingItem(24, new CustomItemStack(HeadTexture.ENERGY_REGULATOR.getAsItemStack(), "&7라운드 로빈 모드: &2\u2714", "", "&e> 클릭하여 라운드 로빈 모드 비활성화", "&e(아이템이 채널에 균등하게 분배됩니다)"));
             menu.addMenuClickHandler(24, (p, slot, item, action) -> {
                 BlockStorage.addBlockInfo(b, ROUND_ROBIN_MODE, String.valueOf(false));
                 updateBlockMenu(menu, b);
@@ -64,14 +64,14 @@ public class CargoInputNode extends AbstractFilterNode {
 
         String smartFillNode = BlockStorage.getLocationInfo(b.getLocation(), SMART_FILL_MODE);
         if (!BlockStorage.hasBlockInfo(b) || smartFillNode == null || smartFillNode.equals(String.valueOf(false))) {
-            menu.replaceExistingItem(16, new CustomItemStack(Material.WRITABLE_BOOK, "&7\"Smart-Filling\" Mode: &4\u2718", "", "&e> Click to enable \"Smart-Filling\" Mode", "", "&fIn this mode, the Cargo node will attempt", "&fto keep a constant amount of items", "&fin the inventory. This is not perfect", "&fand will still fill in empty slots that", "&fcome before a stack of a configured item."));
+            menu.replaceExistingItem(16, new CustomItemStack(Material.WRITABLE_BOOK, "&7\"스마트 채우기\" 모드: &4\u2718", "", "&e> 클릭하여 \"스마트 채우기\" 모드 활성화", "", "&f이 모드에서는 화물 노드가 인벤토리에", "&f일정한 양의 아이템을 유지하려고 시도합니다.", "&f이는 완벽하지 않으며 구성된 아이템 스택 전에", "&f오는 빈 슬롯을 여전히 채울 것입니다."));
             menu.addMenuClickHandler(16, (p, slot, item, action) -> {
                 BlockStorage.addBlockInfo(b, SMART_FILL_MODE, String.valueOf(true));
                 updateBlockMenu(menu, b);
                 return false;
             });
         } else {
-            menu.replaceExistingItem(16, new CustomItemStack(Material.WRITTEN_BOOK, "&7\"Smart-Filling\" Mode: &2\u2714", "", "&e> Click to disable \"Smart-Filling\" Mode", "", "&fIn this mode, the Cargo node will attempt", "&fto keep a constant amount of items", "&fin the inventory. This is not perfect", "&fand will still fill in empty slots that", "&fcome before a stack of a configured item."));
+            menu.replaceExistingItem(16, new CustomItemStack(Material.WRITTEN_BOOK, "&7\"스마트 채우기\" 모드: &2\u2714", "", "&e> 클릭하여 \"스마트 채우기\" 모드 비활성화", "", "&f이 모드에서는 화물 노드가 인벤토리에", "&f일정한 양의 아이템을 유지하려고 시도합니다.", "&f이는 완벽하지 않으며 구성된 아이템 스택 전에", "&f오는 빈 슬롯을 여전히 채울 것입니다."));
             menu.addMenuClickHandler(16, (p, slot, item, action) -> {
                 BlockStorage.addBlockInfo(b, SMART_FILL_MODE, String.valueOf(false));
                 updateBlockMenu(menu, b);

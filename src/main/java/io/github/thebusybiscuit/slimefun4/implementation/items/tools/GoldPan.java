@@ -12,6 +12,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -35,6 +36,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines
 import io.github.thebusybiscuit.slimefun4.implementation.items.multiblocks.AutomatedPanningMachine;
 import io.github.thebusybiscuit.slimefun4.implementation.settings.GoldPanDrop;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
+import kunho.quests.GoldPanEvent;
 
 /**
  * A {@link GoldPan} is a {@link SlimefunItem} which allows you to obtain various
@@ -154,6 +156,8 @@ public class GoldPan extends SimpleSlimefunItem<ItemUseHandler> implements Recip
 
                     // Make sure that the randomly selected item is not air
                     if (output.getType() != Material.AIR) {
+                        GoldPanEvent questEvent = new GoldPanEvent(e.getPlayer());
+                        Bukkit.getPluginManager().callEvent(questEvent);
                         SlimefunUtils.spawnItem(b.getLocation(), output.clone(), ItemSpawnReason.GOLD_PAN_USE, true, e.getPlayer());
                     }
                 }

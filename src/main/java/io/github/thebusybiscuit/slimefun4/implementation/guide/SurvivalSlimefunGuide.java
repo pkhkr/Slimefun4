@@ -76,7 +76,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
     public SurvivalSlimefunGuide(boolean showVanillaRecipes, boolean showHiddenItemGroupsInSearch) {
         this.showVanillaRecipes = showVanillaRecipes;
         this.showHiddenItemGroupsInSearch = showHiddenItemGroupsInSearch;
-        item = new SlimefunGuideItem(this, "&aSlimefun Guide &7(Chest GUI)");
+        item = new SlimefunGuideItem(this, "&a산업 가이드");
     }
 
     @Override
@@ -289,7 +289,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             menu.addItem(index, new CustomItemStack(ChestMenuUtils.getNoPermissionItem(), sfitem.getItemName(), message.toArray(new String[0])));
             menu.addMenuClickHandler(index, ChestMenuUtils.getEmptyClickHandler());
         } else if (isSurvivalMode() && research != null && !profile.hasUnlocked(research)) {
-            menu.addItem(index, new CustomItemStack(ChestMenuUtils.getNotResearchedItem(), ChatColor.WHITE + ItemUtils.getItemName(sfitem.getItem()), "&4&l" + Slimefun.getLocalization().getMessage(p, "guide.locked"), "", "&a> Click to unlock", "", "&7Cost: &b" + research.getCost() + " Level(s)"));
+            menu.addItem(index, new CustomItemStack(ChestMenuUtils.getNotResearchedItem(), ChatColor.WHITE + ItemUtils.getItemName(sfitem.getItem()), "&4&l" + Slimefun.getLocalization().getMessage(p, "guide.locked"), "", "&a> 클릭하여 잠금 해제", "", "&7비용: &b" + research.getCost() + " 레벨"));
             menu.addMenuClickHandler(index, (pl, slot, item, action) -> {
                 research.unlockFromGuide(this, p, profile, sfitem, itemGroup, page);
                 return false;
@@ -441,9 +441,8 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
             recipeType = new RecipeType(optional.get());
             result = recipe.getResult();
         } else {
-            recipeItems = new ItemStack[] { null, null, null, null, new CustomItemStack(Material.BARRIER, "&4We are somehow unable to show you this Recipe :/"), null, null, null, null };
+            recipeItems = new ItemStack[] { null, null, null, null, new CustomItemStack(Material.BARRIER, "&4이 레시피를 표시할 수 없습니다 :/"), null, null, null, null };
         }
-
         ChestMenu menu = create(p);
 
         if (addToHistory) {
@@ -479,7 +478,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
     }
 
-    private <T extends Recipe> void showRecipeChoices(T recipe, ItemStack[] recipeItems, AsyncRecipeChoiceTask task) {
+    private void showRecipeChoices(Recipe recipe, ItemStack[] recipeItems, AsyncRecipeChoiceTask task) {
         RecipeChoice[] choices = Slimefun.getMinecraftRecipeService().getRecipeShape(recipe);
 
         if (choices.length == 1 && choices[0] instanceof MaterialChoice materialChoice) {
@@ -513,14 +512,9 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         ChestMenu menu = create(p);
         Optional<String> wiki = item.getWikipage();
 
-        if (wiki.isPresent()) {
-            menu.addItem(8, new CustomItemStack(Material.KNOWLEDGE_BOOK, ChatColor.WHITE + Slimefun.getLocalization().getMessage(p, "guide.tooltips.wiki"), "", ChatColor.GRAY + "\u21E8 " + ChatColor.GREEN + Slimefun.getLocalization().getMessage(p, "guide.tooltips.open-itemgroup")));
-            menu.addMenuClickHandler(8, (pl, slot, itemstack, action) -> {
-                pl.closeInventory();
-                ChatUtils.sendURL(pl, wiki.get());
-                return false;
-            });
-        }
+        // if (wiki.isPresent()) {
+        //     menu.addItem(8, new CustomItemStack(Material.KNOWLEDGE_BOOK, ChatColor.WHITE + Slimefun.getLocalization().getMessage(p, "guide.tooltips.wiki"), "", ChatColor.GRAY + "\u21E8 " + ChatColor.GREEN + Slimefun.getLocalization().getMessage(p, "guide.tooltips.open-itemgroup")));
+        // }
 
         AsyncRecipeChoiceTask task = new AsyncRecipeChoiceTask();
 
@@ -590,11 +584,11 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         }
 
         // Settings Panel
-        menu.addItem(1, ChestMenuUtils.getMenuButton(p));
-        menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
-            SlimefunGuideSettings.openSettings(pl, pl.getInventory().getItemInMainHand());
-            return false;
-        });
+        // menu.addItem(1, ChestMenuUtils.getMenuButton(p));
+        // menu.addMenuClickHandler(1, (pl, slot, item, action) -> {
+        //     SlimefunGuideSettings.openSettings(pl, pl.getInventory().getItemInMainHand());
+        //     return false;
+        // });
 
         // Search feature!
         menu.addItem(7, ChestMenuUtils.getSearchButton(p));
@@ -616,7 +610,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
         GuideHistory history = profile.getGuideHistory();
 
         if (isSurvivalMode() && history.size() > 1) {
-            menu.addItem(slot, new CustomItemStack(ChestMenuUtils.getBackButton(p, "", "&fLeft Click: &7Go back to previous Page", "&fShift + left Click: &7Go back to Main Menu")));
+            menu.addItem(slot, new CustomItemStack(ChestMenuUtils.getBackButton(p, "", "&f왼쪽 클릭: &7이전 페이지로 이동", "&fShift + 왼쪽 클릭: &7메인 메뉴로 이동")));
 
             menu.addMenuClickHandler(slot, (pl, s, is, action) -> {
                 if (action.isShiftClicked()) {
@@ -645,7 +639,7 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
                 return item;
             }
 
-            String lore = hasPermission(p, slimefunItem) ? "&fNeeds to be unlocked in " + slimefunItem.getItemGroup().getDisplayName(p) : "&fNo Permission";
+            String lore = hasPermission(p, slimefunItem) ? "&f" + slimefunItem.getItemGroup().getDisplayName(p) + "에서 잠금 해제해야 합니다" : "&f권한 없음";
             return slimefunItem.canUse(p, false) ? item : new CustomItemStack(Material.BARRIER, ItemUtils.getItemName(item), "&4&l" + Slimefun.getLocalization().getMessage(p, "guide.locked"), "", lore);
         } else {
             return item;
@@ -748,13 +742,13 @@ public class SurvivalSlimefunGuide implements SlimefunGuideImplementation {
 
     @ParametersAreNonnullByDefault
     private void printErrorMessage(Player p, Throwable x) {
-        p.sendMessage(ChatColor.DARK_RED + "An internal server error has occurred. Please inform an admin, check the console for further info.");
+        p.sendMessage(ChatColor.DARK_RED + "내부 서버 오류가 발생했습니다. 관리자에게 알리고 콘솔에서 추가 정보를 확인하세요.");
         Slimefun.logger().log(Level.SEVERE, "An error has occurred while trying to open a SlimefunItem in the guide!", x);
     }
 
     @ParametersAreNonnullByDefault
     private void printErrorMessage(Player p, SlimefunItem item, Throwable x) {
-        p.sendMessage(ChatColor.DARK_RED + "An internal server error has occurred. Please inform an admin, check the console for further info.");
+        p.sendMessage(ChatColor.DARK_RED + "내부 서버 오류가 발생했습니다. 관리자에게 알리고 콘솔에서 추가 정보를 확인하세요.");
         item.error("This item has caused an error message to be thrown while viewing it in the Slimefun guide.", x);
     }
 

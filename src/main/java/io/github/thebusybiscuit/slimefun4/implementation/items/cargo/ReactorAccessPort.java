@@ -72,7 +72,7 @@ public class ReactorAccessPort extends SlimefunItem {
                 BlockMenu reactor = getReactor(b.getLocation());
 
                 if (reactor != null) {
-                    menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.GREEN_WOOL, "&7Reactor", "", "&6Detected", "", "&7> Click to view Reactor"));
+                    menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.GREEN_WOOL, "&7원자로", "", "&6감지됨", "", "&7> 클릭하여 원자로 보기"));
                     menu.addMenuClickHandler(INFO_SLOT, (p, slot, item, action) -> {
                         if (reactor != null) {
                             reactor.open(p);
@@ -83,7 +83,7 @@ public class ReactorAccessPort extends SlimefunItem {
                         return false;
                     });
                 } else {
-                    menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.RED_WOOL, "&7Reactor", "", "&cNot detected", "", "&7Reactor must be", "&7placed 3 blocks below", "&7the access port!"));
+                    menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.RED_WOOL, "&7원자로", "", "&c감지되지 않음", "", "&7원자로는 접근 포트의", "&73블록 아래에", "&7배치되어야 합니다!"));
                     menu.addMenuClickHandler(INFO_SLOT, (p, slot, item, action) -> {
                         newInstance(menu, b);
                         return false;
@@ -139,11 +139,10 @@ public class ReactorAccessPort extends SlimefunItem {
         preset.drawBackground(new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, " "), inputBorder);
         preset.drawBackground(new CustomItemStack(Material.GREEN_STAINED_GLASS_PANE, " "), outputBorder);
 
-        preset.addItem(1, new CustomItemStack(SlimefunItems.URANIUM, "&7Fuel Slot", "", "&rThis Slot accepts radioactive Fuel such as:", "&2Uranium &ror &aNeptunium"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(22, new CustomItemStack(SlimefunItems.PLUTONIUM, "&7Byproduct Slot", "", "&rThis Slot contains the Reactor's Byproduct", "&rsuch as &aNeptunium &ror &7Plutonium"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(7, new CustomItemStack(SlimefunItems.REACTOR_COOLANT_CELL, "&bCoolant Slot", "", "&rThis Slot accepts Coolant Cells", "&4Without any Coolant Cells, your Reactor", "&4will explode"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(1, new CustomItemStack(SlimefunItems.URANIUM, "&7연료 슬롯", "", "&r이 슬롯은 다음과 같은 방사성 연료를 받습니다:", "&2우라늄 &r또는 &a넵투늄"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(22, new CustomItemStack(SlimefunItems.PLUTONIUM, "&7부산물 슬롯", "", "&r이 슬롯은 원자로의 부산물을 포함합니다", "&r예를 들어 &a넵투늄 &r또는 &7플루토늄"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(7, new CustomItemStack(SlimefunItems.REACTOR_COOLANT_CELL, "&b냉각제 슬롯", "", "&r이 슬롯은 냉각제 셀을 받습니다", "&4냉각제 셀이 없으면 원자로가", "&4폭발할 것입니다"), ChestMenuUtils.getEmptyClickHandler());
     }
-
     @Nonnull
     public int[] getInputSlots() {
         return new int[] { 19, 28, 37, 25, 34, 43 };

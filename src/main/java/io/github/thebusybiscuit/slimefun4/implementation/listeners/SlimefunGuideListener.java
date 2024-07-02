@@ -48,9 +48,7 @@ public class SlimefunGuideListener implements Listener {
         Player p = e.getPlayer();
 
         if (tryOpenGuide(p, e, SlimefunGuideMode.SURVIVAL_MODE) == Result.ALLOW) {
-            if (p.isSneaking()) {
-                SlimefunGuideSettings.openSettings(p, e.getItem());
-            } else {
+            if (p.isSneaking() == false) {
                 openGuide(p, e, SlimefunGuideMode.SURVIVAL_MODE);
             }
         } else if (tryOpenGuide(p, e, SlimefunGuideMode.CHEAT_MODE) == Result.ALLOW) {

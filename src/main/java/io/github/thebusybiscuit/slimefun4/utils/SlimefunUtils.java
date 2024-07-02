@@ -48,6 +48,8 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.altar.AncientPede
 import io.github.thebusybiscuit.slimefun4.implementation.tasks.CapacitorTextureUpdateTask;
 import io.github.thebusybiscuit.slimefun4.utils.itemstack.ItemStackWrapper;
 
+import de.tr7zw.changeme.nbtapi.NBT;
+import java.lang.NullPointerException;
 /**
  * This utility class holds method that are directly linked to Slimefun.
  * It provides a very crucial method for {@link ItemStack} comparison, as well as a simple method
@@ -332,6 +334,37 @@ public final class SlimefunUtils {
      * @return True if the given {@link ItemStack}s are similar under the given constraints
      */
     public static boolean isItemSimilar(@Nullable ItemStack item, @Nullable ItemStack sfitem, boolean checkLore, boolean checkAmount, boolean checkDistinction) {
+        try {
+            NBT.modify(item, nbt -> {
+            try {
+                nbt.removeKey("AttributeModifiers");
+            } catch (ExceptionInInitializerError | java.lang.NoClassDefFoundError | NullPointerException e) {
+                // 무시
+            }
+            try {
+                nbt.removeKey("HideFlags");
+            } catch (ExceptionInInitializerError | java.lang.NoClassDefFoundError | NullPointerException e) {
+                // 무시
+            }
+            try {
+                nbt.removeKey("MMOITEMS_ENCHANTS");
+            } catch (ExceptionInInitializerError | java.lang.NoClassDefFoundError | NullPointerException e) {
+                // 무시
+            }
+            try {
+                nbt.removeKey("MMOITEMS_ENCHANT_SLOTS");
+            } catch (ExceptionInInitializerError | java.lang.NoClassDefFoundError | NullPointerException e) {
+                // 무시
+            }
+            try {
+                nbt.removeKey("MMOITEMS_NAME");
+            } catch (ExceptionInInitializerError | java.lang.NoClassDefFoundError | NullPointerException e) {
+                // 무시
+                }
+            });
+        } catch (Exception | ExceptionInInitializerError | java.lang.NoClassDefFoundError e) {
+            // 무시
+        }
         if (item == null) {
             return sfitem == null;
         } else if (sfitem == null) {

@@ -99,7 +99,7 @@ public class PlayerBackpack {
         cfg.setValue(CONFIG_PREFIX + id + ".size", size);
         markDirty();
 
-        inventory = Bukkit.createInventory(null, size, "Backpack [" + size + " Slots]");
+        inventory = Bukkit.createInventory(null, size, "가방 [" + size + " 슬롯]");
     }
 
     /**
@@ -199,7 +199,7 @@ public class PlayerBackpack {
 
         this.size = size;
 
-        Inventory inv = Bukkit.createInventory(null, size, "Backpack [" + size + " Slots]");
+        Inventory inv = Bukkit.createInventory(null, size, "가방 [" + size + " 슬롯]");
 
         for (int slot = 0; slot < this.inventory.getSize(); slot++) {
             inv.setItem(slot, this.inventory.getItem(slot));
@@ -234,7 +234,7 @@ public class PlayerBackpack {
 
     private void setContents(int size, HashMap<Integer, ItemStack> contents) {
         if (this.inventory == null) {
-            this.inventory = Bukkit.createInventory(null, size, "Backpack [" + size + " Slots]");
+            this.inventory = Bukkit.createInventory(null, size, "가방 [" + size + " 슬롯]");
         }
 
         for (int i = 0; i < size; i++) {

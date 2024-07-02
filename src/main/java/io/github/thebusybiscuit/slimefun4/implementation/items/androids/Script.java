@@ -130,21 +130,20 @@ public final class Script {
     @Nonnull
     ItemStack getAsItemStack(@Nonnull ProgrammableAndroid android, @Nonnull Player p) {
         List<String> lore = new LinkedList<>();
-        lore.add("&7by &f" + getAuthor());
+        lore.add("&7작성자: &f" + getAuthor());
         lore.add("");
-        lore.add("&7Downloads: &f" + getDownloads());
-        lore.add("&7Rating: " + getScriptRatingPercentage());
+        lore.add("&7다운로드 수: &f" + getDownloads());
+        lore.add("&7평점: " + getScriptRatingPercentage());
         lore.add("&a" + getUpvotes() + " \u263A &7| &4\u2639 " + getDownvotes());
         lore.add("");
-        lore.add("&eLeft Click &fto download this Script");
-        lore.add("&4(This will override your current Script)");
+        lore.add("&e좌클릭 &f으로 이 스크립트 다운로드");
+        lore.add("&4(현재 스크립트를 덮어씁니다)");
 
         if (canRate(p)) {
             lore.add("");
-            lore.add("&eShift + Left Click &fto leave a positive Rating");
-            lore.add("&eShift + Right Click &fto leave a negative Rating");
+            lore.add("&eShift + 좌클릭 &f으로 긍정적인 평가 남기기");
+            lore.add("&eShift + 우클릭 &f으로 부정적인 평가 남기기");
         }
-
         return new CustomItemStack(android.getItem(), "&b" + getName(), lore.toArray(new String[0]));
     }
 

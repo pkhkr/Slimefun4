@@ -73,7 +73,7 @@ public class ElevatorPlate extends SimpleSlimefunItem<BlockUseHandler> {
             @Override
             public void onPlayerPlace(BlockPlaceEvent e) {
                 Block b = e.getBlock();
-                BlockStorage.addBlockInfo(b, DATA_KEY, ChatColor.WHITE + "Floor #0");
+                BlockStorage.addBlockInfo(b, DATA_KEY, ChatColor.WHITE + "이름을 설정하세요.");
                 BlockStorage.addBlockInfo(b, "owner", e.getPlayer().getUniqueId().toString());
             }
         };
@@ -110,7 +110,11 @@ public class ElevatorPlate extends SimpleSlimefunItem<BlockUseHandler> {
                 index++;
             }
         }
-
+        LinkedList<ElevatorFloor> reversedFloors = new LinkedList<>();
+        for (int i = floors.size() - 1; i >= 0; i--) {
+            reversedFloors.add(floors.get(i));
+        }
+        floors = reversedFloors;
         return floors;
     }
 
@@ -143,13 +147,13 @@ public class ElevatorPlate extends SimpleSlimefunItem<BlockUseHandler> {
             if (floor.getAltitude() == b.getY()) {
                 menu.addItem(i, new CustomItemStack(
                     Material.COMPASS,
-                    ChatColor.GRAY.toString() + floor.getNumber() + ". " + ChatColor.BLACK + floor.getName(),
+                    ChatColor.GRAY.toString() + (floor.getNumber() + 1) + ". " + ChatColor.WHITE + floor.getName(),
                     Slimefun.getLocalization().getMessage(p, "machines.ELEVATOR.current-floor") + ' ' + ChatColor.WHITE + floor.getName()
                 ), ChestMenuUtils.getEmptyClickHandler());
             } else {
                 menu.addItem(i, new CustomItemStack(
                     Material.PAPER,
-                    ChatColor.GRAY.toString() + floor.getNumber() + ". " + ChatColor.BLACK + floor.getName(),
+                    ChatColor.GRAY.toString() + (floor.getNumber() + 1)+ ". " + ChatColor.WHITE + floor.getName(),
                     Slimefun.getLocalization().getMessage(p, "machines.ELEVATOR.click-to-teleport") + ' ' + ChatColor.WHITE + floor.getName()
                 ), (player, slot, itemStack, clickAction) -> {
                     teleport(player, floor);
@@ -206,8 +210,8 @@ public class ElevatorPlate extends SimpleSlimefunItem<BlockUseHandler> {
     @ParametersAreNonnullByDefault
     public void openEditor(Player p, Block b) {
         ChestMenu menu = new ChestMenu(Slimefun.getLocalization().getMessage(p, "machines.ELEVATOR.editor-title"));
+        menu.addItem(4, new CustomItemStack(Material.NAME_TAG, "&7층 이름 &e(클릭하여 편집)", "", ChatColor.WHITE + ChatColors.color(BlockStorage.getLocationInfo(b.getLocation(), DATA_KEY))));
 
-        menu.addItem(4, new CustomItemStack(Material.NAME_TAG, "&7Floor Name &e(Click to edit)", "", ChatColor.WHITE + ChatColors.color(BlockStorage.getLocationInfo(b.getLocation(), DATA_KEY))));
         menu.addMenuClickHandler(4, (pl, slot, item, action) -> {
             pl.closeInventory();
             pl.sendMessage("");

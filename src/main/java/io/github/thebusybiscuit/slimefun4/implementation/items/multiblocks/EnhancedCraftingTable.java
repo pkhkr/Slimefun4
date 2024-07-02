@@ -10,6 +10,7 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Dispenser;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -20,11 +21,16 @@ import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.debug.Debug;
+import io.github.thebusybiscuit.slimefun4.core.debug.TestCase;
 import io.github.thebusybiscuit.slimefun4.core.services.sounds.SoundEffect;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.implementation.items.backpacks.SlimefunBackpack;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.papermc.lib.PaperLib;
+
+import kunho.quests.EnchantCraftEvent;
+
 
 public class EnhancedCraftingTable extends AbstractCraftingTable {
 
@@ -51,7 +57,7 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
                     if (!event.isCancelled() && SlimefunUtils.canPlayerUseItem(p, output, true)) {
                         craft(inv, possibleDispenser, p, b, event.getOutput());
                     }
-
+                    
                     return;
                 }
             }
@@ -86,7 +92,12 @@ public class EnhancedCraftingTable extends AbstractCraftingTable {
             SoundEffect.ENHANCED_CRAFTING_TABLE_CRAFT_SOUND.playAt(b);
             outputInv.addItem(output);
 
-        } else {
+            EnchantCraftEvent questEvent = new EnchantCraftEvent(p, sfItem);
+            Bukkit.getPluginManager().callEvent(questEvent);
+            // ConsoleCommandSender console = Bukkit.getServer().getConsoleSender();
+            // String command = "bquest point " + p.getName() + " add gidam.slimefun_enchantcraft_" + sfItem.getId().toLowerCase() + " 1";
+            // Bukkit.dispatchCommand(console, command);
+    } else {
             Slimefun.getLocalization().sendMessage(p, "machines.full-inventory", true);
         }
     }

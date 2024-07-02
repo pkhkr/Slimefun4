@@ -1,243 +1,259 @@
----
 slimefun:
-  walking_sticks: 지팡이
-  portable_crafter: 휴대용 조합대
-  fortune_cookie: 포춘 쿠키
-  portable_dustbin: 휴대용 쓰래기통
-  meat_jerky: 고기 육포
-  armor_forge: 갑옷 제작
-  glowstone_armor: 발광석 갑옷
-  lumps: 덩어리 및 마법
-  ender_backpack: 엔더 가방
-  ender_armor: 엔더 갑옷
-  magic_eye_of_ender: 마법의 엔더의 눈
-  magic_sugar: 마법 설탕
-  monster_jerky: 몬스터 육포
-  slime_armor: 슬라임 갑옷
-  sword_of_beheading: 머리 획득의 검
-  basic_circuit_board: 기본 회로 기판
-  advanced_circuit_board: 고급 회로 기판
-  smeltery: 제련소
-  steel: 철강 시대
-  misc_power_items: 중요한 전원 관련 항목
-  battery: 당신의 첫번째 배터리
-  steel_plate: 강철 도금
-  steel_thruster: 강철 스러스터
-  parachute: 낙하산
-  grappling_hook: 그래플링 훅
-  jetpacks: 제트팩
-  multitools: 멀티 툴
-  solar_panel_and_helmet: 태양광 발전
-  elemental_staff: 원소 지팡이
-  grind_stone: 맷돌
-  cactus_armor: 선인장 갑옷
-  gold_pan: 금 냄비(Gold Pan)
-  magical_book_cover: 마법책 바인딩
-  slimefun_metals: 새로운 금속
-  ore_crusher: 광석 더블링
-  bronze: 청동 제작
-  alloys: 고급 합금
-  compressor_and_carbon: 탄소 제작
-  gilded_iron_armor: 금빛 철갑옷
-  synthetic_diamond: 인조 다이아몬드
-  pressure_chamber: 압력 챔버(Pressure Chamber)
-  synthetic_sapphire: 인조 사파이어
-  damascus_steel: 다마스쿠스 강
-  damascus_steel_armor: 다마스쿠스 강 갑옷
-  reinforced_alloy: 강화 합금
-  carbonado: 블랙 다이아몬드
-  magic_workbench: 마법 조합대(Magic Workbench)
-  wind_staff: 바람 지팡이
-  reinforced_armor: 강화 갑옷
-  ore_washer: 광물 세척기(Ore Washer)
-  gold_carats: 순금
-  silicon: 실리콘 밸리
-  fire_staff: 불 지팡이
-  smelters_pickaxe: 제련 곡괭이
-  common_talisman: 부적
-  anvil_talisman: 모루의 부적
-  miner_talisman: 광부의 부적
-  hunter_talisman: 사냥꾼의 부적
-  lava_talisman: 용암 걷기 부적
-  water_talisman: 물 숨결의 부적
-  angel_talisman: 천사의 부적
-  fire_talisman: 소방사의 부적
-  lava_crystal: 화끈한 상황
-  magician_talisman: 마술사의 부적
-  traveller_talisman: 여행자의 부적
-  warrior_talisman: 전사의 부적
-  knight_talisman: 기사의 부적
-  gilded_iron: 빛나는 철
-  synthetic_emerald: 가짜 보석
-  chainmail_armor: 사슬 갑옷
-  whirlwind_talisman: 회오리 바람의 부적
-  wizard_talisman: 마법사의 부적
-  lumber_axe: 재목 도끼
-  hazmat_suit: 방호복
-  uranium: 방사능
-  crushed_ore: 광석 정화
-  redstone_alloy: 레드스톤 합금
-  carbonado_tools: 최고의 기계
-  first_aid: 응급 처치
-  gold_armor: 빛나는 갑옷
-  night_vision_googles: 나이트 비전 고글
-  pickaxe_of_containment: 봉쇄의 곡괭이
-  hercules_pickaxe: 헤라클레스 곡괭이
-  table_saw: 테이블 톱
-  slime_steel_armor: 칙칙한 강철 갑옷
-  blade_of_vampires: 뱀파이어의 검
-  water_staff: 물 지팡이
-  24k_gold_block: 금으로 만든 도시
-  composter: 퇴비 흙
-  farmer_shoes: 농부 신발
-  explosive_tools: 폭발성 도구
-  automated_panning_machine: 자동화 된 골드판
-  boots_of_the_stomper: 스톰 퍼의 장화
-  pickaxe_of_the_seeker: 추적자의 곡괭이
-  backpacks: 가방
-  woven_backpack: 천 가방
-  crucible: 도가니
-  gilded_backpack: Gilded 가방
-  armored_jetpack: 기갑 제트팩
-  ender_talismans: 엔더 부적
-  nickel_and_cobalt: 더 많은 광석
-  magnet: 자기금속
-  infused_magnet: 인퓨즈드 자석
-  cobalt_pickaxe: 빠른 곡괭이
-  essence_of_afterlife: 네크로망시
-  bound_backpack: Soulbound 스토리지
-  jetboots: 제트 부츠
-  armored_jetboots: 기갑 제트 부츠
-  seismic_axe: 지진 도끼
-  pickaxe_of_vein_mining: 베인마이닝 곡괭이
-  bound_weapons: 소울 바운드 무기
-  bound_tools: 소울 바운드 도구
-  bound_armor: 영혼의 갑옷
-  juicer: 맛있는 음료
-  repaired_spawner: 스포너 수리
-  enhanced_furnace: 강화된 화로(Enhanced Furnace)
-  more_enhanced_furnaces: 더 나은 화로(Better Furnaces)
-  high_tier_enhanced_furnaces: 고 티어 화로(High Tier Furnace)
-  reinforced_furnace: 강화 화로(Reinforced Furnace)
-  carbonado_furnace: 카본 엣지 화로(Carbonado Edged Furnace)
-  electric_motor: 가열
-  block_placer: 블럭 설치기(Block Placer)
-  scroll_of_dimensional_teleposition: 주변을 돌리다
-  special_bows: 로빈 후드
-  tome_of_knowledge_sharing: 친구들과 공유
-  flask_of_knowledge: XP 스토리지
-  hardened_glass: 지속적 폭발
-  golden_apple_juice: 황금 물약
-  cooler: 휴대용 음료
-  ancient_altar: 고대 제단
-  wither_proof_obsidian: Wither-Proof 흑요석
-  ancient_runes: 정령 룬
-  special_runes: 보라색 룬
-  infernal_bonemeal: 지옥 불 정령
-  rainbow_blocks: 레인보우 블록
-  infused_hopper: 주입 호퍼
-  wither_proof_glass: 위더-방어 유리
-  duct_tape: 덕트 테이프
-  plastic_sheet: 플라스틱
-  android_memory_core: 메모리 코어
-  oil: 기름
-  fuel: 연료
-  hologram_projector: 홀로그램
-  capacitors: 1티어 건전지
-  high_tier_capacitors: 2티어 건전지
-  solar_generators: 태양 광 발전소
-  electric_furnaces: 전자 화로
-  electric_ore_grinding: 분쇄 및 연삭
-  heated_pressure_chamber: 가열 압력 챔버(Heated Pressure Chamber)
-  coal_generator: 석탄 발전기(Coal Generator)
-  bio_reactor: 바이오 원자로(Bio-Reactor)
-  auto_enchanting: 자동 마법 부여 및 마력 추출(Automatic Enchanting and Disenchanting)
-  auto_anvil: 자동 모루(Automatic Anvil)
-  multimeter: 전력 측정
-  gps_setup: 기본 GPS 설정
-  gps_emergency_transmitter: GPS 비상 웨이포인트
-  programmable_androids: 프로그래밍 가능한 안드로이드(Programmable Androids)
-  android_interfaces: 안드로이드 인터페이스
-  geo_scanner: GEO 스캔
-  combustion_reactor: 연소 반응기(Combustion Reactor)
-  teleporter: 텔레 포터 기본 구성 요소
-  teleporter_activation_plates: 텔레포트기 활성화
-  better_solar_generators: 업그레이드 된 태양 광 발전기(Upgraded Solar Generators)
-  better_gps_transmitters: 업그레이드 된 송신기
-  elevator: 엘리베이터
-  energized_solar_generator: 풀 타임 태양 광 발전
-  energized_gps_transmitter: 최상위 송신기
-  energy_regulator: 에너지 네트워크 101
-  butcher_androids: 정육점 안드로이드(Butcher Androids)
-  organic_food: 유기농 식품
-  auto_breeder: 자동 공급
-  advanced_android: 고급 안드로이드(Advanced Androids)
-  advanced_butcher_android: 고급 안드로이드-정육점(Advanced Androids - Butcher)
-  advanced_fisherman_android: 고급 안드로이드-어부(Advanced Androids - Fisherman)
-  animal_growth_accelerator: 동물 성장 조작(Animal Growth Manipulation)
-  xp_collector: XP 수집기(XP Collector)
-  organic_fertilizer: 유기 비료
-  crop_growth_accelerator: 작물 성장 촉진(Crop Growth Acceleration)
-  better_crop_growth_accelerator: 업그레이드 된 작물 성장 촉진제(Upgraded Crop Growth Accelerator)
-  reactor_essentials: 원자로 기초
-  nuclear_reactor: 원자력 발전소
-  freezer: Mr 프리즈
-  cargo_basics: 화물 기본
-  cargo_nodes: 화물 설정
-  electric_ingot_machines: 전자 주괴 제작(Electric Ingot Fabrication)
-  high_tier_electric_ingot_machines: 초고속 주괴 제작
-  automated_crafting_chamber: 자동화 조합대(Automated Crafting)
-  better_food_fabricator: 업그레이드 된 식품 제조
-  reactor_access_port: 원자로 상호 작용
-  fluid_pump: 유체 펌프(Fluid Pump)
-  better_freezer: 업그레이드 된 냉동고(Upgraded Freezer)
-  boosted_uranium: 네버엔딩 서클
-  trash_can: 폐물
-  advanced_output_node: 고급 출력 노드
-  carbon_press: 탄소 프레스(Carbon Press)
-  electric_smeltery: 전기 제련소(Electric Smeltery)
-  better_electric_furnace: 업그레이드 된 전기로(Upgraded Electric Furnace)
-  better_carbon_press: 업그레이드 된 탄소 프레스(Upgraded Carbon Press)
-  empowered_android: 강화된 안드로이드(Empowered Androids)
-  empowered_butcher_android: 강화된 안드로이드-정육점(Empowered Androids - Butcher)
-  empowered_fisherman_android: 강화된 안드로이드-어부(Empowered Androids - Fisherman)
-  high_tier_carbon_press: 궁극의 탄소 프레스
-  wither_assembler: 자동 위더 킬러
-  better_heated_pressure_chamber: 업그레이드 된 가열 압력 챔버
-  elytra: 겉날개
-  special_elytras: 특별한 겉날개
-  trident: 삼지창
-  electric_crucible: 전기 도가니(Electrified Crucible)
-  better_electric_crucibles: 뜨거운 도가니
-  advanced_electric_smeltery: 고급 전기 제련소
-  advanced_farmer_android: 고급 안드로이드-농부(Advanced Androids - Farmer)
-  lava_generator: 용암 발전기(Lava Generator)
-  nether_ice: 지옥 얼음 냉각수
-  nether_star_reactor: 네더의 별 발전기(Nether Star Reator)
-  blistering_ingots: 맹렬한 방사능
-  automatic_ignition_chamber: 자동 점화 챔버(Automatic Ignition Chamber)
-  output_chest: 기본 기계 출력 상자(Basic machinery outpost chest)
-  copper_wire: 얇아진 전도성
-  radiant_backpack: 빛나는 배낭
-  auto_drier: 건조한 날
-  diet_cookie: 다이어트 쿠키
-  storm_staff: 폭풍의 막대기
-  soulbound_rune: 영혼의 룬
-  geo_miner: GEO-마이너
-  lightning_rune: 번개 룬
-  totem_of_undying: 불멸의 토템
-  charging_bench: 충전대(Charging Bench)
-  nether_gold_pan: 네더 황금판(Nether Gold Pan)
-  electric_press: 전기 프레스(Electric Press)
-  magnesium_generator: 마그네슘의 힘
-  kelp_cookie: 맛있는 다시마
-  makeshift_smeltery: 즉석 제련
-  tree_growth_accelerator: 더 빠른 나무
-  industrial_miner: 산업용 채광  기술
-  advanced_industrial_miner: 더 나은 채광 기술
-  magical_zombie_pills: 좀비화 방지
-  auto_brewer: 산업용 양조장
-  enchantment_rune: 고대 마법
-  lead_clothing: 납 의류
-  tape_measure: 줄자
-  iron_golem_assembler: 자동 철골램
+  24k_gold_block: '&f금 블록 &7(24캐럿)'
+  advanced_android: '&c고급 안드로이드 &7(일반)'
+  advanced_butcher_android: '&c고급 안드로이드 &7(도살업자)'
+  advanced_circuit_board: '&b고급 논리 회로'
+  advanced_electric_smeltery: '&c전동 제련소 &7- &eII'
+  advanced_farmer_android: '&c고급 안드로이드 &7(농부)'
+  advanced_fisherman_android: '&c고급 안드로이드 &7(어부)'
+  advanced_industrial_miner: '&c고급 산업용 채광기'
+  advanced_output_node: '&6고급 화물 노드 &c(출력)'
+  alloys: '&b은동 주괴'
+  ancient_altar: '&d고대 제단 기둥'
+  ancient_runes: '&8기본 룬")'
+  android_interfaces: '&7안드로이드 인터페이스 &c(연료)'
+  android_memory_core: '&b안드로이드 메모리 코어'
+  angel_talisman: '&a천사의 부적'
+  animal_growth_accelerator: '&b동물 성장 촉진기'
+  anvil_talisman: '&a대장장이의 부적'
+  armor_forge: '&6갑옷 제작대'
+  armored_jetboots: '&9장갑 제트 부츠'
+  armored_jetpack: '&9장갑 제트팩'
+  auto_anvil: '&7전동 모루'
+  auto_breeder: '&e전동 교배기'
+  auto_brewer: '&6전동 양조기'
+  auto_crafting: '&6제작용 모터'
+  auto_drier: '&6전동 건조기'
+  auto_enchanting: '&5전동 마법 부여기'
+  automated_panning_machine: '&e기계식 광물 채취기'
+  automatic_ignition_chamber: '&4자동 점화실'
+  backpacks: '&e큰 배낭'
+  basic_circuit_board: '&b기본 논리 회로'
+  battery: '&6배터리'
+  bee_armor: '&e&l벌 투구'
+  better_carbon_press: '&c탄소 압축기 &7- &eII'
+  better_crop_growth_accelerator: '&a작물 성장 촉진기 &7(&eII&7)'
+  better_electric_crucibles: '&c전동 도가니 &7- &eII'
+  better_electric_furnace: '&c전동 화로 &7- &eII'
+  better_food_fabricator: '&c사료 포장기 &7(&eII&7)'
+  better_freezer: '&b냉각기 &7(&eII&7)'
+  better_gps_transmitters: '&c고급 GPS 송신기'
+  better_heated_pressure_chamber: '&c가열형 가압실 &7- &eII'
+  better_solar_generators: '&c고급 태양광 발전기'
+  bio_reactor: '&2바이오 발전기'
+  blade_of_vampires: '&c뱀파이어의 검'
+  blistering_ingots: '&6방사성 주괴 &7(33%)'
+  block_placer: '&a블록 설치기'
+  book_binder: '&6전동 제본기'
+  boosted_uranium: '&2증폭된 우라늄'
+  boots_of_the_stomper: '&b거인의 부츠'
+  bound_armor: '&c영속의 투구'
+  bound_backpack: '&c영속의 배낭'
+  bound_tools: '&c영속의 곡괭이'
+  bound_weapons: '&c영속의 검'
+  bronze: '&b청동 주괴'
+  butcher_androids: '&c안드로이드 &7(도살업자)'
+  cactus_armor: '&2선인장 부츠'
+  capacitors: '&a소형 축전기'
+  carbon_press: '&c탄소 압축기'
+  carbonado: '&b카보나도 원석'
+  carbonado_furnace: '&7카보나도 케이싱 화로'
+  carbonado_tools: '&9멀티 툴 &7- &eVII'
+  cargo_basics: '&3화물용 모터'
+  cargo_nodes: '&7화물 노드 &c(입력)'
+  caveman_talisman: '&a도굴꾼의 부적'
+  chainmail_armor: '&7사슬 갑옷'
+  charging_bench: '&6충전 테이블'
+  climbing_pick: '&b등산용 갈고리'
+  coal_generator: '&c석탄 발전기'
+  cobalt_pickaxe: '&9코발트 곡괭이'
+  combustion_reactor: '&c연소 발전기'
+  common_talisman: '&6기본 부적'
+  composter: '&a퇴비 처리기'
+  compressor_and_carbon: '&b압축기'
+  cooler: '&b냉각 유닛'
+  copper_wire: '&6구리 전선'
+  crop_growth_accelerator: '&a작물 성장 촉진기'
+  crucible: '&c도가니'
+  crushed_ore: '&6분쇄된 광석'
+  damascus_steel: '&b다마스커스 강철 주괴'
+  damascus_steel_armor: '&7다마스커스 강철 투구'
+  diet_cookie: '&6다이어트 쿠키'
+  duct_tape: '&8덕트 테이프'
+  electric_crucible: '&c전동 도가니'
+  electric_furnaces: '&c전동 화로'
+  electric_ingot_machines: '&6전동 광물 채취기'
+  electric_motor: '&c전자석'
+  electric_ore_grinding: '&c전동 광석 분쇄기'
+  electric_press: '&a전동 압축기'
+  electric_smeltery: '&c전동 제련소'
+  elemental_staff: '&6원소의 지팡이'
+  elevator: '&b엘리베이터 발판'
+  elytra: '&7겉날개'
+  elytra_cap: '&5겉날개 헬멧'
+  empowered_android: '&e자율 안드로이드 &7(일반)'
+  empowered_butcher_android: '&e자율 안드로이드 &7(도살업자)'
+  empowered_fisherman_android: '&e자율 안드로이드 &7(어부)'
+  enchantment_rune: '&6마법의 유리'
+  ender_armor: '&5&l엔더 갑옷'
+  ender_backpack: '&6엔더 가방'
+  ender_talismans: '&6엔더 부적'
+  energized_gps_transmitter: '&e가압류 GPS 송신기'
+  energized_solar_generator: '&e가압류 태양광 발전기'
+  energy_connectors: '&e에너지 커넥터'
+  energy_regulator: '&6에너지 조절기'
+  enhanced_furnace: '&7개조된 화로 - &eI'
+  essence_of_afterlife: '&c괴사된 두개골'
+  even_higher_tier_capacitors: '&a가압류 축전기'
+  explosive_tools: '&e폭파의 곡괭이'
+  farmer_shoes: '&e농부의 신발'
+  farmer_talisman: '&a농부의 부적'
+  fire_staff: '&c&o화염&r&6의 지팡이'
+  fire_talisman: '&a소방관의 부적'
+  first_aid: '&b섬유'
+  flask_of_knowledge: '&c경험치 플라스크'
+  fluid_pump: '&9액체 펌프'
+  fortune_cookie: '&6포춘 쿠키'
+  freezer: '&b냉각기'
+  fuel: '&f연료 양동이'
+  geo_miner: '&6토양 채굴기'
+  geo_scanner: '&bGPS 토양 판독기'
+  gilded_backpack: '&e도금된 배낭'
+  gilded_iron: '&6&l도금된 철'
+  gilded_iron_armor: '&6도금된 철 투구'
+  glowstone_armor: '&e&l발광석 투구'
+  gold_armor: '&6금 투구 &7(12캐럿)'
+  gold_carats: '&f금 주괴 &7(4캐럿)'
+  gold_pan: '&6광물 채취기'
+  golden_apple_juice: '&b황금 사과 주스'
+  gps_emergency_transmitter: '&c비상용 GPS 송신기 '
+  gps_setup: '&bGPS 송신기'
+  grappling_hook: '&6그래플링 훅'
+  grind_stone: '&b숫돌'
+  hardened_glass: '&7강화 합금 판'
+  hazmat_suit: '&c스쿠버 투구'
+  heated_pressure_chamber: '&c가열형 가압실'
+  high_tier_capacitors: '&a대용량 축전기'
+  high_tier_carbon_press: '&c탄소 압축기 &7- &eIII'
+  high_tier_electric_ingot_machines: '&6전동 광물 채취기 &7(&eIII&7)'
+  high_tier_enhanced_furnaces: '&7개조된 화로 - &eVIII'
+  hologram_projector: '&b홀로그램 프로젝터'
+  hunter_talisman: '&a사냥꾼의 부적'
+  improved_generators: '&c석탄 발전기 &7(&eII&7)'
+  industrial_miner: '&b산업용 채광기'
+  infernal_bonemeal: '&4업화의 뼛가루'
+  infused_hopper: '&5주입된 호퍼'
+  infused_magnet: '&a마법이 부여된 자석'
+  ingredients_and_cheese: '&f소금'
+  iron_golem_assembler: '&6철 골렘 조립기'
+  jetboots: '&9제트 부츠 &7- &eI'
+  jetpacks: '&9전동 제트팩 &7- &eI'
+  juicer: '&a착즙기'
+  kelp_cookie: '&2켈프 쿠키'
+  knight_talisman: '&a기사의 부적'
+  lava_crystal: '&4용암의 결정'
+  lava_generator: '&4용암 발전기'
+  lava_talisman: '&a샐러맨더의 부적'
+  lead_clothing: '&b강화 섬유'
+  lightning_rune: '255'
+  lumber_axe: '&6나무꾼의 도끼'
+  lumps: '&6마력 촉매 &7- &eI'
+  magic_eye_of_ender: '&6&l마법의 엔더의 눈'
+  magic_sugar: '&6마법 설탕'
+  magic_workbench: '&6마도 제작대'
+  magical_book_cover: '&6마법서 커버'
+  magical_zombie_pills: '&6마법 좀비 치료제'
+  magician_talisman: '&a마도사의 부적'
+  magnesium_generator: '&c마그네슘 염'
+  magnet: '&c자석'
+  makeshift_smeltery: '&e간이 제련소'
+  meat_jerky: '&6소고기 육포'
+  medium_tier_auto_enchanting: '&5전동 마법 부여기 &7- &eII'
+  medium_tier_electric_ingot_machines: '&6전동 광물 채취기 &7(&eII&7)'
+  miner_talisman: '&a광부의 부적'
+  misc_power_items: '&6황산'
+  monster_jerky: '&6몬스터 육포'
+  more_enhanced_furnaces: '&7개조된 화로 - &eIII'
+  multimeter: '&e멀티미터'
+  multitools: '&9멀티 툴 &7- &eI'
+  nether_gold_pan: '&4네더 광물 채취기'
+  nether_ice: '&e네더 얼음'
+  nether_star_reactor: '&f네더 성운 원자로'
+  nickel_and_cobalt: '&b니켈 주괴'
+  night_vision_googles: '&a밤에도 밝은 시야를 제공해주는 고글'
+  nuclear_reactor: '&2원자로'
+  oil: '&f원유 양동이'
+  ore_crusher: '&b광석 분쇄기'
+  ore_washer: '&6광석 세척기'
+  organic_fertilizer: '&c식물성 비료 배합기'
+  organic_food: '&c사료 포장기'
+  output_chest: '&4출력물 상자'
+  parachute: '&f&l낙하산'
+  pickaxe_of_containment: '&c억제의 곡괭이'
+  pickaxe_of_the_seeker: '&a추적자의 곡괭이'
+  pickaxe_of_vein_mining: '&e광맥 채굴 곡괭이'
+  plastic_sheet: '&f플라스틱 판'
+  portable_crafter: '&6휴대용 조합대'
+  portable_dustbin: '&6휴대용 쓰레기통'
+  portable_teleporter: '&b휴대용 텔레포터'
+  pressure_chamber: '&b가압실'
+  produce_collector: '&b생산품 수집기'
+  programmable_androids: '&c안드로이드 &7(일반)'
+  radiant_backpack: '&e찬란한 배낭'
+  rainbow_armor: '&d&l오색 투구'
+  rainbow_blocks: '&5무지개색 테라코타'
+  reactor_access_port: '&2원자로 접근 포트'
+  reactor_essentials: '&b원자로 냉각수 셀'
+  redstone_alloy: '&c레드스톤 합금 주괴'
+  reinforced_alloy: '&b&l경화 합금'
+  reinforced_armor: '&b강화 합금 투구'
+  reinforced_furnace: '&7강화 합금 화로'
+  repaired_spawner: '&b강화된 스포너'
+  scroll_of_dimensional_teleposition: '&6차원 왜곡 스크롤'
+  seismic_axe: '&a지진 도끼'
+  shulker_shell: '&d인공 셜커 껍데기'
+  silicon: '&6실리콘'
+  slime_armor: '&a&l슬라임 투구'
+  slime_steel_armor: '&a&l슬라임 투구'
+  slimefun_metals: '&b구리 주괴'
+  smelters_pickaxe: '&6제련사의 곡괭이'
+  smeltery: '&6제련소'
+  solar_generators: '&b태양광 발전기'
+  solar_panel_and_helmet: '&9태양 전지'
+  soulbound_rune: '&7고대의 룬 &8&l[&5&l영속&8&l]'
+  special_bows: '&c폭파의 활'
+  special_elytras: '&5인조 겉날개'
+  special_runes: '&7고대의 룬 &8&l[&5&l엔더&8&l]")'
+  steel: '&b강철 주괴'
+  steel_plate: '&7&l강철판'
+  steel_thruster: '&7&l강철 추진기'
+  storm_staff: '&8&o전격&r&6의 지팡이'
+  sword_of_beheading: '&6참수의 검'
+  synthetic_diamond: '&c압축된 탄소'
+  synthetic_emerald: '&b인조 에메랄드'
+  synthetic_sapphire: '&b인조 사파이어'
+  table_saw: '&6테이블 쏘'
+  tape_measure: '&6줄자'
+  teleporter: '&bGPS 텔레포터 매트릭스'
+  teleporter_activation_plates: '&fGPS 활성화 장치 &a(개인용)'
+  tome_of_knowledge_sharing: '&6지혜의 마법서'
+  totem_of_undying: '&6불사의 토템'
+  trash_can: '&3쓰레기통'
+  traveller_talisman: '&a탐험가의 부적'
+  tree_growth_accelerator: '&a나무 성장 촉진기'
+  trident: '&b삼지창'
+  uranium: '&c작은 우라늄 더미'
+  villager_rune: '&7고대의 룬 &8&l[&4&l주민&8&l]'
+  walking_sticks: '&7할머니의 지팡이'
+  warrior_talisman: '&a전사의 부적'
+  water_staff: '&1&o수류&r&6의 지팡이'
+  water_talisman: '&a인어의 부적'
+  whirlwind_talisman: '&a돌풍의 부적'
+  wind_staff: '&b&o돌풍&r&6의 지팡이'
+  wise_talisman: '&a지혜의 부적'
+  wither_assembler: '&5위더 조립기'
+  wither_proof_glass: '&5위더 내성 강화 유리'
+  wither_proof_obsidian: '&5위더 내성 흑요석'
+  wizard_talisman: '&a마법사의 부적'
+  woven_backpack: '&e천 배낭'
+  xp_collector: '&a경험치 수집기'

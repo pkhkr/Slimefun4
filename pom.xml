@@ -95,6 +95,10 @@
             <id>codemc-repo</id>
             <url>https://repo.codemc.io/repository/maven-public/</url>
         </repository>
+        <repository>
+            <id>betonquest-repo</id>
+            <url>https://nexus.betonquest.org/repository/betonquest/</url>
+        </repository>
     </repositories>
 
     <build>
@@ -191,11 +195,15 @@
                 <!-- Dependency shading -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>3.6.0</version>
 
                 <configuration>
                     <!-- Relocate these to avoid clashes and conflicts -->
                     <relocations>
+                        <relocation>
+                            <pattern>de.tr7zw.changeme.nbtapi</pattern>
+                            <shadedPattern>io.github.thebusybiscuit.slimefun4.libraries.nbtapi</shadedPattern>
+                        </relocation>
                         <relocation>
                             <pattern>io.github.bakedlibs.dough</pattern>
                             <shadedPattern>io.github.thebusybiscuit.slimefun4.libraries.dough</shadedPattern>
@@ -330,8 +338,6 @@
     </build>
 
     <dependencies>
-
-
         <!-- Development dependencies -->
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
@@ -527,6 +533,19 @@
                     <artifactId>*</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.betonquest</groupId>
+            <artifactId>betonquest</artifactId>
+            <version>2.1.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>de.tr7zw</groupId>
+            <artifactId>item-nbt-api</artifactId>
+            <version>2.13.0</version>
         </dependency>
     </dependencies>
 </project>

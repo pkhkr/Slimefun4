@@ -29,6 +29,8 @@ public enum TestCase {
      */
     PLAYER_PROFILE_DATA,
 
+    KUNHO,
+
     /**
      * Debug information regarding our {@link AnalyticsService}.
      */

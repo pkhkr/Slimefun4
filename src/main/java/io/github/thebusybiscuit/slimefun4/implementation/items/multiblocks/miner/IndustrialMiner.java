@@ -63,7 +63,7 @@ public class IndustrialMiner extends MultiBlockMachine {
         // @formatter:off
         super(itemGroup, item, new ItemStack[] {
             null, null, null,
-            new CustomItemStack(Material.PISTON, "Piston (facing up)"), new ItemStack(Material.CHEST), new CustomItemStack(Material.PISTON, "Piston (facing up)"),
+            new CustomItemStack(Material.PISTON, "피스톤"), new ItemStack(Material.CHEST), new CustomItemStack(Material.PISTON, "피스톤"),
             new ItemStack(baseMaterial), new ItemStack(Material.BLAST_FURNACE), new ItemStack(baseMaterial)
         }, BlockFace.UP);
         // @formatter:on
@@ -165,7 +165,7 @@ public class IndustrialMiner extends MultiBlockMachine {
             ItemStack item = fuel.getInput().clone();
             ItemMeta im = item.getItemMeta();
             List<String> lore = new ArrayList<>();
-            lore.add(ChatColors.color("&8\u21E8 &7Lasts for max. " + fuel.getTicks() + " Ores"));
+            lore.add(ChatColors.color("&8\u21E8 &7최대 " + fuel.getTicks() + " 광석 동안 지속됩니다"));
             im.setLore(lore);
             item.setItemMeta(im);
             list.add(item);

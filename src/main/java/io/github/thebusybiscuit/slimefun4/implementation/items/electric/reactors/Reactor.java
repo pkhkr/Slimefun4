@@ -145,7 +145,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
 
         switch (mode) {
             case GENERATOR:
-                menu.replaceExistingItem(4, new CustomItemStack(SlimefunItems.NUCLEAR_REACTOR, "&7Focus: &eElectricity", "", "&6Your Reactor will focus on Power Generation", "&6If your Energy Network doesn't need Power", "&6it will not produce any either", "", "&7\u21E8 Click to change the Focus to &eProduction"));
+                menu.replaceExistingItem(4, new CustomItemStack(SlimefunItems.NUCLEAR_REACTOR, "&7초점: &e전기", "", "&6원자로가 전력 생산에 집중합니다", "&6에너지 네트워크에 전력이 필요하지 않으면", "&6전력을 생산하지 않습니다", "", "&7\u21E8 클릭하여 초점을 &e생산으로 변경"));
                 menu.addMenuClickHandler(4, (p, slot, item, action) -> {
                     BlockStorage.addBlockInfo(b, MODE, ReactorMode.PRODUCTION.toString());
                     updateInventory(menu, b);
@@ -153,7 +153,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
                 });
                 break;
             case PRODUCTION:
-                menu.replaceExistingItem(4, new CustomItemStack(SlimefunItems.PLUTONIUM, "&7Focus: &eProduction", "", "&6Your Reactor will focus on producing goods", "&6If your Energy Network doesn't need Power", "&6it will continue to run and simply will", "&6not generate any Power in the mean time", "", "&7\u21E8 Click to change the Focus to &ePower Generation"));
+                menu.replaceExistingItem(4, new CustomItemStack(SlimefunItems.PLUTONIUM, "&7초점: &e생산", "", "&6원자로가 물품 생산에 집중합니다", "&6에너지 네트워크에 전력이 필요하지 않아도", "&6계속 작동하며 그 동안에는", "&6전력을 생산하지 않습니다", "", "&7\u21E8 클릭하여 초점을 &e전력 생산으로 변경"));
                 menu.addMenuClickHandler(4, (p, slot, item, action) -> {
                     BlockStorage.addBlockInfo(b, MODE, ReactorMode.GENERATOR.toString());
                     updateInventory(menu, b);
@@ -167,7 +167,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
         BlockMenu port = getAccessPort(b.getLocation());
 
         if (port != null) {
-            menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.GREEN_WOOL, "&7Access Port", "", "&6Detected", "", "&7> Click to view Access Port"));
+            menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.GREEN_WOOL, "&7접근 포트", "", "&6감지됨", "", "&7> 클릭하여 접근 포트 보기"));
             menu.addMenuClickHandler(INFO_SLOT, (p, slot, item, action) -> {
                 port.open(p);
                 updateInventory(menu, b);
@@ -175,7 +175,7 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
                 return false;
             });
         } else {
-            menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.RED_WOOL, "&7Access Port", "", "&cNot detected", "", "&7Access Port must be", "&7placed 3 blocks above", "&7a reactor!"));
+            menu.replaceExistingItem(INFO_SLOT, new CustomItemStack(Material.RED_WOOL, "&7접근 포트", "", "&c감지되지 않음", "", "&7접근 포트는", "&7원자로 위 3블록에", "&7설치되어야 합니다!"));
             menu.addMenuClickHandler(INFO_SLOT, (p, slot, item, action) -> {
                 updateInventory(menu, b);
                 menu.open(p);
@@ -199,19 +199,19 @@ public abstract class Reactor extends AbstractEnergyProvider implements Hologram
 
         preset.addItem(22, new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
 
-        preset.addItem(1, new CustomItemStack(getFuelIcon(), "&7Fuel Slot", "", "&fThis Slot accepts radioactive Fuel such as:", "&2Uranium &for &aNeptunium"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(1, new CustomItemStack(getFuelIcon(), "&7연료 슬롯", "", "&f이 슬롯은 다음과 같은 방사성 연료를 받습니다:", "&2우라늄 &f또는 &a넵투늄"), ChestMenuUtils.getEmptyClickHandler());
 
         for (int i : border_2) {
             preset.addItem(i, new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE, " "), ChestMenuUtils.getEmptyClickHandler());
         }
 
         if (needsCooling()) {
-            preset.addItem(7, new CustomItemStack(getCoolant(), "&bCoolant Slot", "", "&fThis Slot accepts Coolant Cells", "&4Without any Coolant Cells, your Reactor", "&4will explode"));
+            preset.addItem(7, new CustomItemStack(getCoolant(), "&b냉각제 슬롯", "", "&f이 슬롯은 냉각제 셀을 받습니다", "&4냉각제 셀이 없으면", "&4원자로가 폭발할 것입니다"));
         } else {
-            preset.addItem(7, new CustomItemStack(Material.BARRIER, "&bCoolant Slot", "", "&fThis Slot accepts Coolant Cells"));
+            preset.addItem(7, new CustomItemStack(Material.BARRIER, "&b냉각제 슬롯", "", "&f이 슬롯은 냉각제 셀을 받습니다"));
 
             for (int i : border_4) {
-                preset.addItem(i, new CustomItemStack(Material.BARRIER, "&cNo Coolant Required"), ChestMenuUtils.getEmptyClickHandler());
+                preset.addItem(i, new CustomItemStack(Material.BARRIER, "&c냉각제 불필요"), ChestMenuUtils.getEmptyClickHandler());
             }
         }
     }

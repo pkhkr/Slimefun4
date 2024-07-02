@@ -19,6 +19,7 @@ softdepend:
 - mcMMO
 - ItemsAdder
 - Orebfuscator
+- BetonQuest
 
 # Our commands
 commands:

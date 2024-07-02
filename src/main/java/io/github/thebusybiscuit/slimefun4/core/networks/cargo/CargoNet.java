@@ -126,16 +126,16 @@ public class CargoNet extends AbstractItemNetwork implements HologramOwner {
 
     public void tick(@Nonnull Block b) {
         if (!regulator.equals(b.getLocation())) {
-            updateHologram(b, "&4Multiple Cargo Regulators connected");
+            updateHologram(b, "&4여러 개의 화물 조절기가 연결됨");
             return;
         }
 
         super.tick();
 
         if (connectorNodes.isEmpty() && terminusNodes.isEmpty()) {
-            updateHologram(b, "&cNo Cargo Nodes found");
+            updateHologram(b, "&c화물 노드를 찾을 수 없음");
         } else {
-            updateHologram(b, "&7Status: &a&lONLINE");
+            updateHologram(b, "&7상태: &a&l온라인");
 
             // Skip ticking if the threshold is not reached. The delay is not same as minecraft tick,
             // but it's based on 'custom-ticker-delay' config.

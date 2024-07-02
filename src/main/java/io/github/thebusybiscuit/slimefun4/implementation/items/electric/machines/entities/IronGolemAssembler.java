@@ -65,11 +65,10 @@ public class IronGolemAssembler extends AbstractEntityAssembler<IronGolem> {
 
     @Override
     protected void constructMenu(BlockMenuPreset preset) {
-        preset.addItem(1, new CustomItemStack(getHead(), "&7Pumpkin Slot", "", "&fThis Slot accepts Pumpkins"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(7, new CustomItemStack(getBody(), "&7Iron Block Slot", "", "&fThis Slot accepts Iron Blocks"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(13, new CustomItemStack(Material.CLOCK, "&7Cooldown: &b30 Seconds", "", "&fThis Machine takes up to half a Minute to operate", "&fso give it some Time!"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(1, new CustomItemStack(getHead(), "&7호박 슬롯", "", "&f이 슬롯은 호박을 받습니다"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(7, new CustomItemStack(getBody(), "&7철 블록 슬롯", "", "&f이 슬롯은 철 블록을 받습니다"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(13, new CustomItemStack(Material.CLOCK, "&7쿨다운: &b30초", "", "&f이 기계는 작동하는 데 최대 30초가 걸립니다", "&f그러니 시간을 주세요!"), ChestMenuUtils.getEmptyClickHandler());
     }
-
     @Override
     public IronGolem spawnEntity(Location l) {
         SoundEffect.IRON_GOLEM_ASSEMBLER_ASSEMBLE_SOUND.playAt(l, SoundCategory.BLOCKS);

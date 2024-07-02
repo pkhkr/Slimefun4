@@ -36,9 +36,8 @@ public class SlimefunGuideItem extends ItemStack {
         List<String> lore = new ArrayList<>();
         SlimefunGuideMode type = implementation.getMode();
         lore.add(type == SlimefunGuideMode.CHEAT_MODE ? ChatColors.color("&4&lOnly openable by Admins") : "");
-        lore.add(ChatColors.color("&eRight Click &8\u21E8 &7Browse Items"));
-        lore.add(ChatColors.color("&eShift + Right Click &8\u21E8 &7Open Settings / Credits"));
-
+        lore.add(ChatColors.color("&e우클릭 &8\u21E8 &7아이템 둘러보기"));
+        lore.add(ChatColors.color("&eShift + 우클릭 &8\u21E8 &7아이템 검색하기"));
         meta.setLore(lore);
 
         PersistentDataAPI.setString(meta, Slimefun.getRegistry().getGuideDataKey(), type.name());

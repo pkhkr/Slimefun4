@@ -159,14 +159,14 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
 
     private void updateBlockInventory(BlockMenu menu, Block b) {
         if (!BlockStorage.hasBlockInfo(b) || BlockStorage.getLocationInfo(b.getLocation(), KEY_ENABLED) == null || BlockStorage.getLocationInfo(b.getLocation(), KEY_ENABLED).equals(String.valueOf(false))) {
-            menu.replaceExistingItem(22, new CustomItemStack(Material.GUNPOWDER, "&7Enabled: &4\u2718", "", "&e> Click to enable this Machine"));
+            menu.replaceExistingItem(22, new CustomItemStack(Material.GUNPOWDER, "&7활성화: &4\u2718", "", "&e> 이 기계를 활성화하려면 클릭하세요"));
             menu.addMenuClickHandler(22, (p, slot, item, action) -> {
                 BlockStorage.addBlockInfo(b, KEY_ENABLED, String.valueOf(true));
                 updateBlockInventory(menu, b);
                 return false;
             });
         } else {
-            menu.replaceExistingItem(22, new CustomItemStack(Material.REDSTONE, "&7Enabled: &2\u2714", "", "&e> Click to disable this Machine"));
+            menu.replaceExistingItem(22, new CustomItemStack(Material.REDSTONE, "&7활성화: &2\u2714", "", "&e> 이 기계를 비활성화하려면 클릭하세요"));
             menu.addMenuClickHandler(22, (p, slot, item, action) -> {
                 BlockStorage.addBlockInfo(b, KEY_ENABLED, String.valueOf(false));
                 updateBlockInventory(menu, b);
@@ -176,7 +176,7 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
 
         double offset = (!BlockStorage.hasBlockInfo(b) || BlockStorage.getLocationInfo(b.getLocation(), KEY_OFFSET) == null) ? 3.0F : Double.valueOf(BlockStorage.getLocationInfo(b.getLocation(), KEY_OFFSET));
 
-        menu.replaceExistingItem(31, new CustomItemStack(Material.PISTON, "&7Offset: &3" + offset + " Block(s)", "", "&fLeft Click: &7+0.1", "&fRight Click: &7-0.1"));
+        menu.replaceExistingItem(31, new CustomItemStack(Material.PISTON, "&7오프셋: &3" + offset + " 블록", "", "&f왼쪽 클릭: &7+0.1", "&f오른쪽 클릭: &7-0.1"));
         menu.addMenuClickHandler(31, (p, slot, item, action) -> {
             double offsetv = NumberUtils.reparseDouble(Double.valueOf(BlockStorage.getLocationInfo(b.getLocation(), KEY_OFFSET)) + (action.isRightClicked() ? -0.1F : 0.1F));
             BlockStorage.addBlockInfo(b, KEY_OFFSET, String.valueOf(offsetv));
@@ -279,11 +279,10 @@ public abstract class AbstractEntityAssembler<T extends Entity> extends SimpleSl
     }
 
     protected void constructMenu(BlockMenuPreset preset) {
-        preset.addItem(1, new CustomItemStack(getHead(), "&7Head Slot", "", "&fThis Slot accepts the head type"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(7, new CustomItemStack(getBody(), "&7Body Slot", "", "&fThis Slot accepts the body type"), ChestMenuUtils.getEmptyClickHandler());
-        preset.addItem(13, new CustomItemStack(Material.CLOCK, "&7Cooldown: &b30 Seconds", "", "&fThis Machine takes up to half a Minute to operate", "&fso give it some Time!"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(1, new CustomItemStack(getHead(), "&7머리 슬롯", "", "&f이 슬롯은 머리 유형을 받습니다"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(7, new CustomItemStack(getBody(), "&7몸체 슬롯", "", "&f이 슬롯은 몸체 유형을 받습니다"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(13, new CustomItemStack(Material.CLOCK, "&7쿨다운: &b30초", "", "&f이 기계는 작동하는 데 최대 30초가 걸립니다", "&f그러니 시간을 주세요!"), ChestMenuUtils.getEmptyClickHandler());
     }
-
     @Override
     public EnergyNetComponentType getEnergyComponentType() {
         return EnergyNetComponentType.CONSUMER;

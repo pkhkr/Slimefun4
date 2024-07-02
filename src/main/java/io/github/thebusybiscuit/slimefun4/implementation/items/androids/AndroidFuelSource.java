@@ -16,19 +16,19 @@ import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 public enum AndroidFuelSource {
 
     /**
-     * This {@link ProgrammableAndroid} runs on solid fuel, e.g. Wood or coal
+     * 이 {@link ProgrammableAndroid}는 고체 연료로 작동합니다. 예: 나무 또는 석탄
      */
-    SOLID("", "&fThis Android runs on solid Fuel", "&fe.g. Coal, Wood, etc..."),
+    SOLID("", "&f이 안드로이드는 고체 연료로 작동합니다", "&f예: 석탄, 나무 등..."),
 
     /**
-     * This {@link ProgrammableAndroid} runs on liquid fuel, e.g. Fuel, Oil or Lava
+     * 이 {@link ProgrammableAndroid}는 액체 연료로 작동합니다. 예: 연료, 기름 또는 용암
      */
-    LIQUID("", "&fThis Android runs on liquid Fuel", "&fe.g. Lava, Oil, Fuel, etc..."),
+    LIQUID("", "&f이 안드로이드는 액체 연료로 작동합니다", "&f예: 용암, 기름, 연료 등..."),
 
     /**
-     * This {@link ProgrammableAndroid} runs on nuclear fuel, e.g. Uranium
+     * 이 {@link ProgrammableAndroid}는 핵연료로 작동합니다. 예: 우라늄
      */
-    NUCLEAR("", "&fThis Android runs on radioactive Fuel", "&fe.g. Uranium, Neptunium or Boosted Uranium");
+    NUCLEAR("", "&f이 안드로이드는 방사성 연료로 작동합니다", "&f예: 우라늄, 넵투늄 또는 강화 우라늄");
 
     private final String[] lore;
 
@@ -37,13 +37,13 @@ public enum AndroidFuelSource {
     }
 
     /**
-     * This returns a display {@link ItemStack} for this {@link AndroidFuelSource}.
+     * 이 메서드는 이 {@link AndroidFuelSource}에 대한 표시용 {@link ItemStack}을 반환합니다.
      * 
-     * @return An {@link ItemStack} to display
+     * @return 표시할 {@link ItemStack}
      */
     @Nonnull
     public ItemStack getItem() {
-        return new CustomItemStack(HeadTexture.GENERATOR.getAsItemStack(), "&8\u21E9 &cFuel Input &8\u21E9", lore);
+        return new CustomItemStack(HeadTexture.GENERATOR.getAsItemStack(), "&8\u21E9 &c연료 입력 &8\u21E9", lore);
     }
 
 }

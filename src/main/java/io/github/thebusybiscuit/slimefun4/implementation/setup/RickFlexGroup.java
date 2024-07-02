@@ -25,7 +25,7 @@ class RickFlexGroup extends FlexItemGroup {
 
     // Never instantiate more than once.
     RickFlexGroup(@Nonnull NamespacedKey key) {
-        super(key, new CustomItemStack(Material.NETHER_STAR, "&6&lSuper secret items"), 1);
+        super(key, new CustomItemStack(Material.NETHER_STAR, "&6&l초특급 비밀 아이템"), 1);
     }
 
     // Gonna override this method

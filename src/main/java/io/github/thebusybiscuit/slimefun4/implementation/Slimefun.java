@@ -134,6 +134,7 @@ import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.MenuListener;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.UniversalBlockMenu;
 
+import kunho.quests.BetonQuestHook;
 /**
  * This is the main class of Slimefun.
  * This is where all the magic starts, take a look around.
@@ -390,6 +391,11 @@ public class Slimefun extends JavaPlugin implements SlimefunAddon {
 
         // Hooray!
         logger.log(Level.INFO, "Slimefun has finished loading in {0}", getStartupTime(timestamp));
+
+
+        logger.log(Level.INFO, "BetonQuest start loading");
+        BetonQuestHook.register();
+        logger.log(Level.INFO, "BetonQuest has finished loading");
     }
 
     @Override
